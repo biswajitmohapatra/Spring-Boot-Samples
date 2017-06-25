@@ -15,7 +15,7 @@ import com.biswajit.spring.boot.bean.DatasourceBean;
 
 @Profile(value="QA")
 @Configuration
-@PropertySource(value="classpath:qaDatasource.properties",ignoreResourceNotFound=true)
+@PropertySource(value="classpath:QaDatasource.properties",ignoreResourceNotFound=true)
 public class AppQADatabaseConfig {
 
  @Autowired

@@ -11,7 +11,7 @@ import com.biswajit.spring.boot.bean.DatasourceBean;
 import com.biswajit.spring.boot.bean.ProfileBean;
 
 @RestController
-public class PropertyController {
+public class ProfileController {
 	
 @Autowired
 private ProfileBean profileBean;
