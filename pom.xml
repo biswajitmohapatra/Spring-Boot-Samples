@@ -9,6 +9,7 @@
    	<module>Spring-Boot-Web-App-JARVersion</module>
    	<module>Spring-Boot-Web-App-WARVersion</module>
    	<module>Spring-Boot-Profile-Sample</module>
+   	<module>Spring-Boot-Email-Sample</module>
   </modules>
   
   <parent>
