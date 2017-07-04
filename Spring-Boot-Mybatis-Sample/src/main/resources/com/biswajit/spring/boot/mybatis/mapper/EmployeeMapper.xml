@@ -1,0 +1,35 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.biswajit.spring.boot.mybatis.mapper.EmployeeMapper">
+
+    <resultMap id="employeeResultMap" type="com.biswajit.spring.boot.mybatis.model.Employee">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="sex" property="sex" />
+        <result column="age" property="age" />
+        <result column="designation" property="designation" />
+    </resultMap>
+
+    <select id="findAllEmployees" resultMap="employeeResultMap">
+        select id,name,sex,age,designation from Employee
+    </select>
+
+    <select id="findEmployeeById" resultMap="employeeResultMap" parameterType="java.lang.Integer">
+        select id,name,sex,age,designation from Employee WHERE id=#{id}
+    </select>
+
+    <insert id="insertEmployee" parameterType="com.biswajit.spring.boot.mybatis.model.Employee">
+        insert into Employee(name,sex,age,designation) values(#{name},#{sex},#{age},#{designation})
+    </insert>
+    
+    <insert id="updateEmployee" parameterType="com.biswajit.spring.boot.mybatis.model.Employee">
+        update Employee set name=#{name},sex = #{sex},age = #{age},designation = #{designation} WHERE id=#{id} 
+    </insert>
+    
+     <select id="deleteEmployeeById" parameterType="java.lang.Integer">
+        delete from Employee WHERE id=#{id}
+     </select>
+              
+</mapper>
